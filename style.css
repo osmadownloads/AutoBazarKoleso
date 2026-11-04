@@ -37,7 +37,20 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding: 16px 0;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-controls nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .logo {
@@ -51,7 +64,6 @@ header {
 }
 
 .nav a {
-  margin-left: 22px;
   color: #c9d4f5;
   font-size: 0.95rem;
   text-decoration: none;
@@ -59,6 +71,28 @@ header {
 
 .nav a:hover {
   color: #fff;
+}
+
+.language-label {
+  display: inline-flex;
+}
+
+#language {
+  width: auto;
+  min-width: 120px;
+  border-color: #3a4a73;
+  background: #17264d;
+  color: #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 
 .hero {
@@ -324,6 +358,16 @@ footer {
 }
 
 @media (max-width: 860px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-controls {
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .layout {
     grid-template-columns: 1fr;
   }

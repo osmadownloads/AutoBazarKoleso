@@ -12,11 +12,26 @@
   <div class="wrap">
     <div class="nav">
       <div class="logo">AutoBazár<span>Koleso<span></div>
-      <nav><a href="#">Buy</a><a href="#">Sell</a><a href="#">Financing</a><a href="#">Contact</a></nav>
+      <div class="nav-controls">
+        <nav>
+          <a href="#" data-i18n="navBuy">Buy</a>
+          <a href="#" data-i18n="navSell">Sell</a>
+          <a href="#" data-i18n="navFinancing">Financing</a>
+          <a href="#" data-i18n="navContact">Contact</a>
+        </nav>
+        <label class="language-label">
+          <span class="visually-hidden" data-i18n="languageLabel">Language</span>
+          <select id="language" aria-label="Language">
+            <option value="en">English</option>
+            <option value="sk">Slovenčina</option>
+            <option value="ru">Русский</option>
+          </select>
+        </label>
+      </div>
     </div>
     <div class="hero">
-      <h1>Kvalitné ojazdené autá v celej Európe</h1>
-      <p>Prezrite si skontrolované ojazdené vozidlá od dôveryhodných predajcov v 12 európskych mestách. Filtrujte podľa ceny, roku výroby, značky, modelového radu, lokality a technického stavu.</p>
+      <h1 data-i18n="heroTitle">Quality used cars across Europe</h1>
+      <p data-i18n="heroDescription">Browse inspected used vehicles from trusted dealers in 12 European cities. Filter by price, year, brand, model, location, and condition.</p>
     </div>
   </div>
 </header>
@@ -26,41 +41,41 @@
     <div class="layout">
 
       <aside id="filters">
-        <h2>Filters <button class="reset" id="resetBtn">Reset all</button></h2>
+        <h2><span data-i18n="filters">Filters</span> <button class="reset" id="resetBtn" data-i18n="reset">Reset all</button></h2>
 
         <div class="field">
-          <label class="t">Price (€)</label>
+          <label class="t" for="priceMin" data-i18n="price">Price (€)</label>
           <div class="row">
-            <input type="number" id="priceMin" placeholder="Min" min="0" step="500">
-            <input type="number" id="priceMax" placeholder="Max" min="0" step="500">
+            <input type="number" id="priceMin" placeholder="Min" data-i18n-placeholder="min" data-i18n-aria-label="minimumPrice" aria-label="Minimum price" min="0" step="500">
+            <input type="number" id="priceMax" placeholder="Max" data-i18n-placeholder="max" data-i18n-aria-label="maximumPrice" aria-label="Maximum price" min="0" step="500">
           </div>
         </div>
 
         <div class="field">
-          <label class="t">Year of production</label>
+          <label class="t" for="yearMin" data-i18n="year">Year of production</label>
           <div class="row">
-            <input type="number" id="yearMin" placeholder="From" min="1990" max="2026">
-            <input type="number" id="yearMax" placeholder="To" min="1990" max="2026">
+            <input type="number" id="yearMin" placeholder="From" data-i18n-placeholder="from" data-i18n-aria-label="yearFrom" aria-label="Year from" min="1990" max="2026">
+            <input type="number" id="yearMax" placeholder="To" data-i18n-placeholder="to" data-i18n-aria-label="yearTo" aria-label="Year to" min="1990" max="2026">
           </div>
         </div>
 
         <div class="field">
-          <label class="t">Car brand</label>
-          <select id="brand"><option value="">All brands</option></select>
+          <label class="t" for="brand" data-i18n="brand">Car brand</label>
+          <select id="brand"><option value="" data-i18n="allBrands">All brands</option></select>
         </div>
 
         <div class="field">
-          <label class="t">Brand series / model</label>
-          <select id="series" disabled><option value="">Select a brand first</option></select>
+          <label class="t" for="series" data-i18n="model">Brand series / model</label>
+          <select id="series" disabled><option value="" data-i18n="selectBrandFirst">Select a brand first</option></select>
         </div>
 
         <div class="field">
-          <label class="t">Locality</label>
-          <select id="locality"><option value="">All of Europe</option></select>
+          <label class="t" for="locality" data-i18n="location">Locality</label>
+          <select id="locality"><option value="" data-i18n="allEurope">All of Europe</option></select>
         </div>
 
         <div class="field">
-          <label class="t">Vehicle condition</label>
+          <label class="t" data-i18n="condition">Vehicle condition</label>
           <div class="checks" id="conditions"></div>
         </div>
       </aside>
@@ -69,13 +84,14 @@
         <div class="toolbar">
           <span class="count" id="count"></span>
           <div class="toolbar-controls">
-            <button class="mobile-toggle" id="toggleFilters">Filters</button>
+            <button class="mobile-toggle" id="toggleFilters" data-i18n="filters">Filters</button>
+            <label class="visually-hidden" for="sort" data-i18n="sortLabel">Sort results</label>
             <select id="sort">
-              <option value="priceAsc">Price: low to high</option>
-              <option value="priceDesc">Price: high to low</option>
-              <option value="yearDesc">Year: newest first</option>
-              <option value="yearAsc">Year: oldest first</option>
-              <option value="kmAsc">Mileage: lowest first</option>
+              <option value="priceAsc" data-i18n="priceAsc">Price: low to high</option>
+              <option value="priceDesc" data-i18n="priceDesc">Price: high to low</option>
+              <option value="yearDesc" data-i18n="yearDesc">Year: newest first</option>
+              <option value="yearAsc" data-i18n="yearAsc">Year: oldest first</option>
+              <option value="kmAsc" data-i18n="kmAsc">Mileage: lowest first</option>
             </select>
           </div>
         </div>
@@ -86,7 +102,7 @@
   </div>
 </main>
 
-<footer>© 2026 AutobazárKoleso – demo website. Listings are sample data.</footer>
+<footer data-i18n="footer">© 2026 EuroAuto – demo website. Listings are sample data.</footer>
 
 <script src="scripts.js"></script>
 </body>
