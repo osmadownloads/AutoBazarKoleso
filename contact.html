@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – AutoBazár Koleso</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="index.html">AutoBazár<span>Koleso</span></a>
+      <div class="nav-controls">
+        <nav>
+          <a href="index.html" data-i18n="navBuy">Buy</a>
+          <a href="sell.html" data-i18n="navSell">Sell</a>
+          <a href="financing.html" data-i18n="navFinancing">Financing</a>
+          <a href="contact.html" data-i18n="navContact" aria-current="page">Contact</a>
+        </nav>
+        <label class="language-label">
+          <span class="visually-hidden" data-i18n="languageLabel">Language</span>
+          <select id="language" aria-label="Language">
+            <option value="en">English</option>
+            <option value="sk">Slovenčina</option>
+            <option value="ru">Русский</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="hero">
+      <h1 data-i18n="heroTitle">Get in touch</h1>
+      <p data-i18n="heroDescription">Questions about a car, selling or financing? Send us a message and we will reply within one business day.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="layout">
+
+      <aside class="always">
+        <h2 data-i18n="detailsTitle">Contact details</h2>
+        <ul class="info-list">
+          <li><span class="ico">📞</span><div><small data-i18n="cPhone">Phone</small><a href="tel:+421900000000">+421 900 000 000</a></div></li>
+          <li><span class="ico">✉️</span><div><small data-i18n="cEmail">Email</small><a href="mailto:info@autobazarkoleso.example">info@autobazarkoleso.example</a></div></li>
+          <li><span class="ico">🕘</span><div><small data-i18n="cHours">Opening hours</small><span data-i18n="cHoursValue">Mon–Fri 9:00–18:00, Sat 9:00–13:00</span></div></li>
+          <li><span class="ico">📍</span><div><small data-i18n="cOffice">Head office</small><span id="office"></span></div></li>
+        </ul>
+      </aside>
+
+      <section>
+        <div class="panel" id="formPanel">
+          <h2 data-i18n="formTitle">Send us a message</h2>
+          <p class="lead" data-i18n="formLead">Fields marked * are required.</p>
+
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="field full">
+                <label class="t" for="name"><span data-i18n="fName">Full name</span> <b class="req">*</b></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label class="t" for="email"><span data-i18n="fEmail">Email</span> <b class="req">*</b></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label class="t" for="phone"><span data-i18n="fPhone">Phone</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label class="t" for="topic" data-i18n="fTopic">Topic</label>
+                <select id="topic" name="topic"></select>
+              </div>
+              <div class="field">
+                <label class="t" for="car"><span data-i18n="fCar">Car you are interested in</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <select id="car" name="car"></select>
+              </div>
+              <div class="field full">
+                <label class="t" for="message"><span data-i18n="fMessage">Message</span> <b class="req">*</b></label>
+                <textarea id="message" name="message" required placeholder="How can we help?" data-i18n-placeholder="phMessage"></textarea>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span data-i18n="consent">I agree to be contacted and to the processing of my data.</span>
+            </label>
+            <button class="btn block" type="submit" data-i18n="submit">Send message</button>
+          </form>
+        </div>
+
+        <div class="panel success" id="success" hidden>
+          <h2 data-i18n="okTitle">Message sent!</h2>
+          <p id="successText"></p>
+          <button class="btn" type="button" id="againBtn" data-i18n="again">Send another message</button>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="branchesTitle">Our showrooms</h2>
+          <p class="lead" data-i18n="branchesLead">Visit us in any of 12 European cities. Addresses are placeholders – replace them with your own.</p>
+          <div class="branches" id="branches"></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer data-i18n="footer">© 2026 AutoBazár Koleso – demo website. Listings are sample data.</footer>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

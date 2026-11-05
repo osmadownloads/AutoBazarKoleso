@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell your car – AutoBazár Koleso</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="index.html">AutoBazár<span>Koleso</span></a>
+      <div class="nav-controls">
+        <nav>
+          <a href="index.html" data-i18n="navBuy">Buy</a>
+          <a href="sell.html" data-i18n="navSell" aria-current="page">Sell</a>
+          <a href="financing.html" data-i18n="navFinancing">Financing</a>
+          <a href="contact.html" data-i18n="navContact">Contact</a>
+        </nav>
+        <label class="language-label">
+          <span class="visually-hidden" data-i18n="languageLabel">Language</span>
+          <select id="language" aria-label="Language">
+            <option value="en">English</option>
+            <option value="sk">Slovenčina</option>
+            <option value="ru">Русский</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="hero">
+      <h1 data-i18n="heroTitle">Sell your car with confidence</h1>
+      <p data-i18n="heroDescription">Tell us about your vehicle and our team will get back to you within one business day with a free valuation and a listing offer.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="layout">
+
+      <aside class="always">
+        <h2 data-i18n="howTitle">How it works</h2>
+        <ol class="steps">
+          <li><span class="num">1</span><div><strong data-i18n="step1Title">Describe your car</strong><p data-i18n="step1Text">Fill in the basic details and add a few photos.</p></div></li>
+          <li><span class="num">2</span><div><strong data-i18n="step2Title">Get a valuation</strong><p data-i18n="step2Text">A dealer from your region reviews it and sends you a fair price.</p></div></li>
+          <li><span class="num">3</span><div><strong data-i18n="step3Title">We list or buy it</strong><p data-i18n="step3Text">Choose a free listing on our marketplace or a fast direct purchase.</p></div></li>
+        </ol>
+
+        <h2 class="sub-h" data-i18n="whyTitle">Why sell with us</h2>
+        <ul class="ticks">
+          <li data-i18n="why1">No listing fees until your car sells</li>
+          <li data-i18n="why2">Verified buyers from 12 European cities</li>
+          <li data-i18n="why3">Help with paperwork and ownership transfer</li>
+        </ul>
+
+        <div class="guide">
+          <strong data-i18n="guideTitle">Market guide</strong>
+          <span id="guideText" aria-live="polite"></span>
+        </div>
+      </aside>
+
+      <section>
+        <div class="panel" id="formPanel">
+          <h2 data-i18n="formTitle">Vehicle details</h2>
+          <p class="lead" data-i18n="formLead">Fields marked * are required.</p>
+
+          <form id="sellForm">
+            <div class="form-grid">
+              <div class="field">
+                <label class="t" for="brand"><span data-i18n="fBrand">Car brand</span> <b class="req">*</b></label>
+                <input type="text" id="brand" name="brand" list="brandList" required autocomplete="off" placeholder="e.g. Škoda" data-i18n-placeholder="phBrand">
+                <datalist id="brandList"></datalist>
+              </div>
+              <div class="field">
+                <label class="t" for="model"><span data-i18n="fModel">Model</span> <b class="req">*</b></label>
+                <input type="text" id="model" name="model" list="modelList" required autocomplete="off" placeholder="e.g. Octavia" data-i18n-placeholder="phModel">
+                <datalist id="modelList"></datalist>
+              </div>
+              <div class="field">
+                <label class="t" for="year"><span data-i18n="fYear">Year of production</span> <b class="req">*</b></label>
+                <input type="number" id="year" name="year" min="1990" max="2026" required>
+              </div>
+              <div class="field">
+                <label class="t" for="mileage"><span data-i18n="fMileage">Mileage (km)</span> <b class="req">*</b></label>
+                <input type="number" id="mileage" name="mileage" min="0" step="1000" required>
+              </div>
+              <div class="field">
+                <label class="t" for="fuel"><span data-i18n="fFuel">Fuel</span> <b class="req">*</b></label>
+                <select id="fuel" name="fuel" required></select>
+              </div>
+              <div class="field">
+                <label class="t" for="condition"><span data-i18n="fCondition">Vehicle condition</span> <b class="req">*</b></label>
+                <select id="condition" name="condition" required></select>
+              </div>
+              <div class="field">
+                <label class="t" for="city"><span data-i18n="fCity">City</span> <b class="req">*</b></label>
+                <select id="city" name="city" required></select>
+              </div>
+              <div class="field">
+                <label class="t" for="price"><span data-i18n="fPrice">Asking price (€)</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <input type="number" id="price" name="price" min="0" step="100">
+              </div>
+              <div class="field full">
+                <label class="t" for="description"><span data-i18n="fDesc">Description</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <textarea id="description" name="description" placeholder="Service history, equipment, number of owners…" data-i18n-placeholder="phDesc"></textarea>
+              </div>
+              <div class="field full">
+                <label class="t" for="photos" data-i18n="photosTitle">Photos</label>
+                <label class="drop">
+                  <span data-i18n="photosHint">Click to add up to 6 photos</span>
+                  <input type="file" id="photos" name="photos" accept="image/*" multiple class="visually-hidden">
+                </label>
+                <div class="thumbs" id="thumbs"></div>
+              </div>
+            </div>
+
+            <h3 class="form-h" data-i18n="contactTitle">Your contact details</h3>
+            <div class="form-grid">
+              <div class="field full">
+                <label class="t" for="name"><span data-i18n="fName">Full name</span> <b class="req">*</b></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label class="t" for="email"><span data-i18n="fEmail">Email</span> <b class="req">*</b></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label class="t" for="phone"><span data-i18n="fPhone">Phone</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span data-i18n="consent">I agree to be contacted about my car and to the processing of my data.</span>
+            </label>
+            <button class="btn block" type="submit" data-i18n="submit">Request valuation</button>
+          </form>
+        </div>
+
+        <div class="panel success" id="success" hidden>
+          <h2 data-i18n="okTitle">Thank you!</h2>
+          <p id="successText"></p>
+          <button class="btn" type="button" id="againBtn" data-i18n="again">Submit another car</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer data-i18n="footer">© 2026 AutoBazár Koleso – demo website. Listings are sample data.</footer>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script src="sell.js"></script>
+</body>
+</html>

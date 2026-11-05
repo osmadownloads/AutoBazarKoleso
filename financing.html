@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car financing – AutoBazár Koleso</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="index.html">AutoBazár<span>Koleso</span></a>
+      <div class="nav-controls">
+        <nav>
+          <a href="index.html" data-i18n="navBuy">Buy</a>
+          <a href="sell.html" data-i18n="navSell">Sell</a>
+          <a href="financing.html" data-i18n="navFinancing" aria-current="page">Financing</a>
+          <a href="contact.html" data-i18n="navContact">Contact</a>
+        </nav>
+        <label class="language-label">
+          <span class="visually-hidden" data-i18n="languageLabel">Language</span>
+          <select id="language" aria-label="Language">
+            <option value="en">English</option>
+            <option value="sk">Slovenčina</option>
+            <option value="ru">Русский</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="hero">
+      <h1 data-i18n="heroTitle">Financing made simple</h1>
+      <p data-i18n="heroDescription">Estimate your monthly payment in seconds, then request a personal offer from our partner banks.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="layout">
+
+      <aside class="always">
+        <h2 data-i18n="calcTitle">Payment calculator</h2>
+
+        <div class="for-car" id="forCar" hidden></div>
+
+        <div class="field">
+          <label class="t" for="price" data-i18n="carPrice">Car price (€)</label>
+          <input type="number" id="price" min="0" step="500" value="15000">
+        </div>
+
+        <div class="field">
+          <div class="range-head">
+            <label class="t" for="down" data-i18n="downPayment">Down payment</label>
+            <output id="downOut" for="down"></output>
+          </div>
+          <input type="range" id="down" min="0" max="60" step="5" value="20">
+        </div>
+
+        <div class="field">
+          <label class="t" for="term" data-i18n="term">Loan term</label>
+          <select id="term"></select>
+        </div>
+
+        <div class="field">
+          <div class="range-head">
+            <label class="t" for="apr" data-i18n="apr">Interest rate (APR)</label>
+            <output id="aprOut" for="apr"></output>
+          </div>
+          <input type="range" id="apr" min="0" max="15" step="0.1" value="6.9">
+        </div>
+      </aside>
+
+      <section>
+        <div class="panel">
+          <div class="pay-label" data-i18n="perMonth">Estimated monthly payment</div>
+          <div class="big-pay" id="pay" aria-live="polite"></div>
+
+          <div class="stats">
+            <div class="stat"><small data-i18n="loanAmount">Loan amount</small><strong id="loan"></strong></div>
+            <div class="stat"><small data-i18n="totalInterest">Total interest</small><strong id="interest"></strong></div>
+            <div class="stat"><small data-i18n="totalPay">Total to pay</small><strong id="total"></strong></div>
+          </div>
+
+          <div class="bar" role="img" aria-hidden="true">
+            <span class="c-down" id="barDown"></span>
+            <span class="c-loan" id="barLoan"></span>
+            <span class="c-interest" id="barInterest"></span>
+          </div>
+          <div class="legend">
+            <span><i class="c-down"></i><span data-i18n="barDown">Down payment</span></span>
+            <span><i class="c-loan"></i><span data-i18n="barPrincipal">Loan amount</span></span>
+            <span><i class="c-interest"></i><span data-i18n="barInterest">Interest</span></span>
+          </div>
+          <p class="fine" data-i18n="disclaimer">Indicative calculation only. The final offer depends on your credit check and the lender.</p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="optionsTitle">Financing options</h2>
+          <div class="cards3">
+            <div class="opt-card"><div class="ico">🚗</div><h3 data-i18n="optLoanTitle">Car loan</h3><p data-i18n="optLoanText">Own the car from day one. Fixed monthly payments over 12 to 84 months.</p></div>
+            <div class="opt-card"><div class="ico">🔑</div><h3 data-i18n="optLeaseTitle">Leasing</h3><p data-i18n="optLeaseText">Lower monthly payments with the option to buy the car at the end of the term.</p></div>
+            <div class="opt-card"><div class="ico">🔁</div><h3 data-i18n="optTradeTitle">Trade-in</h3><p data-i18n="optTradeText">Use the value of your current car as a down payment on your next one.</p></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="offerTitle">Request a personal offer</h2>
+          <p class="lead" data-i18n="offerLead">Your calculation is included automatically.</p>
+          <form id="offerForm">
+            <div class="form-grid">
+              <div class="field full">
+                <label class="t" for="name"><span data-i18n="fName">Full name</span> <b class="req">*</b></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label class="t" for="email"><span data-i18n="fEmail">Email</span> <b class="req">*</b></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label class="t" for="phone"><span data-i18n="fPhone">Phone</span> <span class="opt" data-i18n="optional">optional</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span data-i18n="consent">I agree to be contacted and to the processing of my data.</span>
+            </label>
+            <button class="btn block" type="submit" data-i18n="submit">Request offer</button>
+          </form>
+          <div class="success" id="success" hidden style="padding:18px;border-radius:12px">
+            <h2 data-i18n="okTitle">Request sent!</h2>
+            <p id="successText"></p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+          <details><summary data-i18n="q1">What do I need to apply?</summary><p data-i18n="a1">A valid ID, proof of income and your bank details. We guide you through the rest.</p></details>
+          <details><summary data-i18n="q2">Can I pay the loan off early?</summary><p data-i18n="a2">Early repayment is usually possible. Exact conditions depend on the lender and are stated in your offer.</p></details>
+          <details><summary data-i18n="q3">How fast do I get an answer?</summary><p data-i18n="a3">Most requests receive a preliminary answer within one business day.</p></details>
+          <details><summary data-i18n="q4">Can I finance a car from another country?</summary><p data-i18n="a4">Yes. We help with cross-border purchases, registration and paperwork across Europe.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer data-i18n="footer">© 2026 AutoBazár Koleso – demo website. Listings are sample data.</footer>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script src="financing.js"></script>
+</body>
+</html>
