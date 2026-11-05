@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EuroAuto – Used Cars in Europe</title>
+<title>AutoBazár Koleso – Used Cars in Europe</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,13 +11,13 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <div class="logo">AutoBazár<span>Koleso<span></div>
+      <a class="logo" href="index.html">AutoBazár<span>Koleso</span></a>
       <div class="nav-controls">
         <nav>
-          <a href="#" data-i18n="navBuy">Buy</a>
-          <a href="#" data-i18n="navSell">Sell</a>
-          <a href="#" data-i18n="navFinancing">Financing</a>
-          <a href="#" data-i18n="navContact">Contact</a>
+          <a href="index.html" data-i18n="navBuy" aria-current="page">Buy</a>
+          <a href="sell.html" data-i18n="navSell">Sell</a>
+          <a href="financing.html" data-i18n="navFinancing">Financing</a>
+          <a href="contact.html" data-i18n="navContact">Contact</a>
         </nav>
         <label class="language-label">
           <span class="visually-hidden" data-i18n="languageLabel">Language</span>
@@ -102,8 +102,10 @@
   </div>
 </main>
 
-<footer data-i18n="footer">© 2026 EuroAuto – demo website. Listings are sample data.</footer>
+<footer data-i18n="footer">© 2026 AutoBazár Koleso – demo website. Listings are sample data.</footer>
 
+<script src="i18n.js"></script>
+<script src="data.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
