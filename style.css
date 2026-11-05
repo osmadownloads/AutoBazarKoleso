@@ -391,3 +391,668 @@ footer {
     font-weight: 600;
   }
 }
+
+/* ============================================================
+   Sub pages: sell, financing, contact, car detail
+   ============================================================ */
+[hidden] {
+  display: none !important;
+}
+
+.nav .logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-controls nav a {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-controls nav a:hover {
+  background: #17264d;
+}
+
+.nav-controls nav a[aria-current="page"] {
+  background: #1f3470;
+  color: #fff;
+}
+
+/* Car cards are now links */
+.img {
+  text-decoration: none;
+}
+
+.info h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info h3 a:hover {
+  color: var(--brand);
+}
+
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn.block {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+}
+
+.btn.ghost {
+  background: #eef2fb;
+  color: var(--brand-dark);
+}
+
+.btn.ghost:hover {
+  background: #dfe7fa;
+}
+
+/* ---------- Panels (white cards, same look as the filter sidebar) ---------- */
+.panel {
+  padding: 22px;
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 2px 10px rgba(20, 30, 60, 0.07);
+}
+
+.panel + .panel,
+.gallery + .panel {
+  margin-top: 18px;
+}
+
+.panel h2 {
+  margin-bottom: 4px;
+  font-size: 1.15rem;
+}
+
+.panel .lead {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.section-title {
+  margin: 28px 0 14px;
+  font-size: 1.2rem;
+}
+
+.form-h {
+  margin: 22px 0 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+}
+
+.sub-h {
+  margin-top: 22px;
+}
+
+.layout.reverse {
+  grid-template-columns: 1fr 320px;
+}
+
+/* ---------- Form controls ---------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid #b9ccff;
+  border-color: var(--brand);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-grid .field {
+  margin-bottom: 0;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.req {
+  color: #d12b2b;
+}
+
+.opt {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 3px;
+}
+
+.success {
+  border: 1px solid #bfe8cf;
+  background: #f0fbf4;
+  text-align: center;
+}
+
+.success h2 {
+  color: #14633a;
+  font-size: 1.4rem;
+}
+
+.success p {
+  margin: 8px 0 18px;
+  color: #2f5d44;
+}
+
+/* ---------- Sell page ---------- */
+.steps {
+  margin-top: 14px;
+  list-style: none;
+}
+
+.steps li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.steps .num {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.steps p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.ticks {
+  margin-top: 12px;
+  list-style: none;
+}
+
+.ticks li {
+  position: relative;
+  padding: 4px 0 4px 24px;
+  font-size: 0.92rem;
+}
+
+.ticks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--good);
+  font-weight: 800;
+}
+
+.guide {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #eef2fb;
+  color: #3a4766;
+  font-size: 0.88rem;
+}
+
+.guide strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.drop {
+  display: block;
+  padding: 18px;
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.drop:hover,
+.drop:focus-within {
+  border-color: var(--brand);
+  background: #f5f8ff;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #eef2fb;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 27, 61, 0.8);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------- Financing page ---------- */
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--brand);
+}
+
+.range-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.range-head label.t {
+  margin-bottom: 0;
+}
+
+.range-head output {
+  color: var(--brand-dark);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.for-car {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #eef2fb;
+  font-size: 0.88rem;
+}
+
+.for-car a {
+  color: var(--brand-dark);
+  font-weight: 600;
+}
+
+.pay-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.big-pay {
+  margin: 2px 0 18px;
+  color: var(--brand-dark);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.big-pay small {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #eef2fb;
+}
+
+.stat small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.stat strong {
+  font-size: 1.1rem;
+}
+
+.bar {
+  display: flex;
+  height: 14px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  transition: width 0.25s;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.c-down {
+  background: #0f1b3d;
+}
+
+.c-loan {
+  background: var(--brand);
+}
+
+.c-interest {
+  background: #f59e0b;
+}
+
+.fine {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.cards3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.opt-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.opt-card .ico {
+  font-size: 1.5rem;
+}
+
+.opt-card h3 {
+  margin: 6px 0 4px;
+  font-size: 1rem;
+}
+
+.opt-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+details {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+details:last-child {
+  border-bottom: none;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- Contact page ---------- */
+.info-list {
+  margin-top: 10px;
+  list-style: none;
+}
+
+.info-list li {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.info-list .ico {
+  font-size: 1.2rem;
+}
+
+.info-list small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.info-list a {
+  color: var(--brand-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.branch {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.branch span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Car detail page ---------- */
+.crumbs {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.crumbs a {
+  color: #9db8ff;
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  color: #fff;
+}
+
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #eef2fb, #dce5f8);
+  box-shadow: 0 2px 10px rgba(20, 30, 60, 0.07);
+}
+
+.gallery svg {
+  width: 62%;
+  height: auto;
+}
+
+.gallery .badge {
+  top: 16px;
+  left: 16px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+}
+
+.spec-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  margin-top: 8px;
+}
+
+.spec-table div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+.spec-table dt {
+  color: var(--muted);
+}
+
+.spec-table dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.price-big {
+  color: var(--brand-dark);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.monthly {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.monthly strong {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+@media (max-width: 860px) {
+  aside.always {
+    display: block;
+  }
+
+  .layout.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .layout.reverse aside {
+    order: -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-grid,
+  .stats,
+  .spec-table {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    height: 220px;
+  }
+}
+
+.info-list a {
+  overflow-wrap: anywhere;
+}
+
+.panel h2 + p:not(.lead) {
+  margin-top: 8px;
+}
