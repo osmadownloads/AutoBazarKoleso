@@ -119,7 +119,7 @@ function renderCar() {
   $("carMain").innerHTML = `
     <div class="gallery">
       <span class="badge ${badgeClass(car.cond)}">${conditionName(car.cond)}</span>
-      ${carSVG(car.color)}
+      ${carPhoto(car)}
     </div>
     <div class="panel">
       <h2>${t("specsTitle")}</h2>

@@ -46,6 +46,37 @@ const CARS = RAW.map((r, i) => ({
   color: r[9]
 }));
 
+/* Photo for each car id (files live in /images) */
+const IMAGES = {
+  0: "images/vw-golf.jpg",
+  1: "images/vw-passat.jpg",
+  2: "images/vw-tiguan.webp",
+  3: "images/bmw-3-series.jpg",
+  4: "images/bmw-5-series.jpg",
+  5: "images/bmw-x3.png",
+  6: "images/audi-a3.webp",
+  7: "images/audi-a4.png",
+  8: "images/audi-q5.jpg",
+  9: "images/skoda-octavia.png",
+  10: "images/skoda-superb.png",
+  11: "images/skoda-kodiaq.png",
+  12: "images/mercedes-c-class.jpg",
+  13: "images/mercedes-e-class.jpg",
+  14: "images/mercedes-glc.png",
+  15: "images/renault-clio.webp",
+  16: "images/renault-megane.jpg",
+  17: "images/peugeot-208.jpg",
+  18: "images/peugeot-308.jpg",
+  19: "images/toyota-corolla.png",
+  20: "images/toyota-yaris.jpg",
+  21: "images/ford-focus.png",
+  22: "images/ford-fiesta.jpg",
+  23: "images/vw-golf.jpg",
+  24: "images/bmw-3-series.jpg",
+  25: "images/audi-a3.webp"
+};
+CARS.forEach(car => { car.image = IMAGES[car.id]; });
+
 const CONDITIONS = ["Like new", "Excellent", "Good", "Fair", "Needs repair"];
 const FUELS = ["Petrol", "Diesel", "Hybrid", "Electric"];
 const BRANDS = [...new Set(CARS.map(car => car.brand))].sort();
@@ -101,6 +132,12 @@ const carSVG = color => `<svg viewBox="0 0 200 90" aria-hidden="true">
   <circle cx="150" cy="70" r="13" fill="#1b2333"/><circle cx="150" cy="70" r="5" fill="#cbd5e0"/>
 </svg>`;
 
+/* Real photo with the SVG silhouette as fallback if the file is missing */
+const carPhoto = car =>
+  car.image
+    ? `<img src="${car.image}" alt="${carName(car)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:carSVG('${car.color}')}).firstChild)">`
+    : carSVG(car.color);
+
 const badgeClass = condition =>
   condition === "Fair" ? "fair" : condition === "Needs repair" ? "repair" : "";
 
@@ -110,7 +147,7 @@ function carCard(car) {
     <article class="car">
       <a class="img" href="${link}" aria-label="${carName(car)}">
         <span class="badge ${badgeClass(car.cond)}">${conditionName(car.cond)}</span>
-        ${carSVG(car.color)}
+        ${carPhoto(car)}
       </a>
       <div class="info">
         <h3><a href="${link}">${carName(car)}</a></h3>

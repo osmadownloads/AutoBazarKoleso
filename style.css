@@ -1056,3 +1056,14 @@ details p {
 .panel h2 + p:not(.lead) {
   margin-top: 8px;
 }
+
+/* Car photos */
+.img img, .gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery img { position: absolute; inset: 0; }
+.gallery .badge { z-index: 1; }
+.gallery img { object-fit: contain; }
